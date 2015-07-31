@@ -194,7 +194,7 @@ func run(gitHome, receiveUser, receiveFingerprint, gitreceivePath string) {
 	}
 
 	prereceiveHookPath := fmt.Sprintf("%s/hooks/pre-receive", repoPath)
-	prereceiveHook, err := os.OpenFile(prereceiveHookPath, os.O_RDWR|os.O_TRUNC|os.O_CREATE, 0770)
+	prereceiveHook, err := os.OpenFile(prereceiveHookPath, os.O_RDWR|os.O_TRUNC|os.O_CREATE, 0755)
 	if err != nil {
 		fmt.Printf("failed to open repo pre-receive hook script\n")
 		os.Exit(1)
